@@ -1,0 +1,87 @@
+﻿@{
+    var students = ViewBag.Students as List<studentModel>;
+    var files = ViewBag.Files as List<fileModel>;
+}
+<header>
+    <ul>
+        <li><img src="~/picture/image.png" alt="logo"></a></li>
+        <li><a href="@Url.Action("Teacher_Index", "Home")" class="active">首頁</a></li>
+        <li><a href="@Url.Action("Teacher_Student_data", "Home")">資料維護</a></li>
+        <li><a href="@Url.Action("Account", "Home")">帳號維護</a></li>
+        <li><a href="@Url.Action("Review", "Home")">審核畫面</a></li>
+        <li><a href="@Url.Action("Lmport_data_teacher", "Home")">匯入資料</a></li>
+        <li id="contact"><a href="#">登出</a></li>
+    </ul>
+</header>
+<body>
+
+    <form action="@Url.Action("Search","Home")" method="post">
+        <label for="system">學制</label>
+        <select id="system" name="system">
+            <option value=""></option>
+            <option value="四技">四技</option>
+            <option value="五專">五專</option>
+            <option value="二技">二技</option>
+        </select>
+        <label for="student_class">班級</label>
+        <select id="student_class" name="student_class">
+            <option value=""></option>
+            <option value="四年A班">四年A班</option>
+            <option value="四年B班">四年B班</option>
+        </select>
+        <input type="submit" value="提交" />
+    </form>
+    <div class="container mt-5">
+        <h2 class="mb-4">學生資料表</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>學生編號</th>
+                    <th>學生姓名</th>
+                    <th>學制</th>
+                    <th>學生狀態</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(int i =0;i<students.Count;i++)
+                {
+                    var student = students[i];
+                    var file = files[i];
+                    <tr>
+                        <td>@student.student_No</td>
+                        <td>@student.student_name</td>
+                        <td>@student.student_system</td>
+                        <td>@student.student_status</td>
+                        
+                      
+                        <td>
+                            <span style="margin-right: 10px;">CPE檢測</span>
+                            <span style="margin-right: 10px;">專業證照</span>
+                            <span style="margin-right: 10px;">比賽一</span>
+                            <span style="margin-right: 10px;">比賽二</span>
+                            <span style="margin-right: 10px;">比賽三</span>
+                            <br />
+
+                            <span style="margin-right: 10px;">@file.file_CPE</span>
+                            <span style="margin-right: 10px;">@file.file_Certificate</span>
+                            <span style="margin-right: 10px;">@file.race_1</span>
+                            <span style="margin-right: 10px;">@file.race_2</span>
+                            <span style="margin-right: 10px;">@file.race_3</span>
+                            <a href="@Url.Action("ViewPhoto", "Home", new { studentNo = student.student_No })" class="btn btn-primary">審核</a>
+
+                        </td>
+                        
+
+
+                    </tr> }
+
+                   
+
+
+                    </tbody>
+                </table>
+    
+</body>
+
+
+

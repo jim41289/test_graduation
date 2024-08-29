@@ -1,0 +1,39 @@
+﻿<div class="wrapper">
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6 side-image">
+                <!-- img-->
+                <img src="../21732913453932_814.jpg" alt="">
+                <div class="text"></div>
+            </div>
+            <div class="col-md-6 right">
+                <form action="@Url.Action("DoLogin", "Home")" method="post">
+                    <b>登入帳號</b>
+                    <div class="input-field">
+                        <label for="account">帳號</label>
+                        <input type="text" class="input" id="account" name="account" required autocomplete="off">
+                    </div>
+                    <div class="input-field">
+                        <label for="password">密碼</label>
+                        <input type="password" class="input" id="password" name="password" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="ValiCode">驗證碼</label>
+                        <input type="text" class="input" id="ValiCode" name="ValiCode" required>
+                        <div class="vali-container">
+                            <img src="@Url.Action("GetValidateCode", "Home")" style="width: 100px; height: 30px; top:-5px;left:150px; " alt="驗證碼" />
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="submit" class="submit" value="登入" required autocomplete="off">
+                    </div>
+                    <div class="signin">
+                        <a href="@Url.Action("forget", "Home")">忘記密碼</a>
+                        <a href="@Url.Action("Teacher_login", "Home")">老師登入</a>
+                    </div>
+                    <div style="color: red; margin-top: 10px;">@TempData["Errmsg"]</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

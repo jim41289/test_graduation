@@ -1,0 +1,46 @@
+﻿            <div class="wrapper">
+                <div class="container main">
+                    <div class="row">
+                        <div class="col-md-6 side-image">
+                            <!-- img-->
+                            <img src="../21732913453932_814.jpg" alt="">
+                            <div class="text">
+                            </div>
+                        </div>
+                        <div class="col-md-6 right">
+                            <div>
+                                <b>忘記密碼</b>
+                                <div class="input-field">
+                                    <form action="@Url.Action("Doforget", "Home")">
+                                        <label for="account">帳號</label>
+                                        <input type="text" class="input" id="account" name="account" required autocomplete="off">
+                                        
+                                </div>
+                                <div class="input-field">
+                                    <label for="like_food">最喜歡的食物</label>
+                                    <input type="text" class="input" id="like_food" name="like_food" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="like_people">最喜歡的人物</label>
+                                    <input type="text" class="input" id="like_people" name="like_people" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="ValiCode">驗證碼</label>
+                                    <input type="text" class="input" id="ValiCode" name="ValiCode" required>
+                                    <div class="vali-container">
+                                        <img src="@Url.Action("GetValidateCode", "Home")" style="width: 100px; height: 30px; top:-5px;left:150px; " alt="驗證碼" />
+                                    </div>
+                                </div>
+                                <div class="input-field">
+                                    <input type="submit" class="submit" value="送出" required autocomplete="off">
+                                </div>
+                                </form>
+                                <div class="signin">
+                                    <a href="@Url.Action("index", "Home")">登入</a>
+                                    <div style="color: red; margin-top: 10px;"> @TempData["Errmsg"]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

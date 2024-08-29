@@ -1,0 +1,86 @@
+﻿@{
+    var basePath = "~/images/Certificates/";
+    var studentID = ViewBag.StudentNo;
+    var certificatesPath = Url.Content("~/images/Certificates/" + studentID + "2_1.png");
+    var cpePath = Url.Content("~/images/CPE/" + studentID + "1_1.png");
+    var race1Path = Url.Content("~/images/Races/" + studentID + "3_1.png");
+    var race2Path = Url.Content("~/images/Races/" + studentID + "3_2.png");
+    var race3Path = Url.Content("~/images/Races/" + studentID + "3_3.png");
+
+    // Helper function to check if an image exists
+    Func<string, bool> ImageExists = (imagePath) =>
+    {
+        var serverPath = Server.MapPath(imagePath);
+        return System.IO.File.Exists(serverPath);
+    };
+}
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>學生編號</th>
+            <th class="text-header">專業證照</th>
+            <th class="text-header">CPE 檢測</th>
+            <th class="text-header">比賽一</th>
+            <th class="text-header">比賽二</th>
+            <th class="text-header">比賽三</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-header">@studentID</td>
+            <td>
+                @if (ImageExists(certificatesPath))
+                {
+                    <img src="@certificatesPath" alt="專業證照" />
+                }
+                else
+                {
+                    <span>未上傳</span>
+                }
+            </td>
+            <td class="image-cell">
+                @if (ImageExists(cpePath))
+                {
+                    <img src="@cpePath" alt="CPE 檢測" />
+                }
+                else
+                {
+                    <span>未上傳</span>
+                }
+            </td>
+            <td class="image-cell">
+                @if (ImageExists(race1Path))
+                {
+                    <img src="@race1Path" alt="比賽一" />
+                }
+                else
+                {
+                    <span>未上傳</span>
+                }
+            </td>
+            <td class="image-cell">
+                @if (ImageExists(race2Path))
+                {
+                    <img src="@race2Path" alt="比賽二" />
+                }
+                else
+                {
+                    <span>未上傳</span>
+                }
+            </td>
+            <td class="image-cell">
+                @if (ImageExists(race3Path))
+                {
+                    <img src="@race3Path" alt="比賽三" />
+                }
+                else
+                {
+                    <span>未上傳</span>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

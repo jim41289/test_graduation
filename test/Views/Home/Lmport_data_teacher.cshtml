@@ -1,0 +1,22 @@
+﻿
+<header>
+    <ul>
+        <li><img src="~/picture/image.png" alt="logo"></a></li>
+        <li><a href="@Url.Action("Teacher_Index", "Home")" class="active">首頁</a></li>
+        <li><a href="@Url.Action("Teacher_Student_data", "Home")">資料維護</a></li>
+        <li><a href="@Url.Action("Account", "Home")">帳號維護</a></li>
+        <li><a href="@Url.Action("Review", "Home")">審核畫面</a></li>
+        <li><a href="@Url.Action("Lmport_data_teacher", "Home")">匯入資料</a></li>
+        <li id="contact"><a href="#">登出</a></li>
+    </ul>
+</header>
+<body>
+    <div class="mb-3">
+        @using (Html.BeginForm("ImportExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="file" />
+            <input type="submit" value="Import" />
+        }
+    </div>
+    
+</body>

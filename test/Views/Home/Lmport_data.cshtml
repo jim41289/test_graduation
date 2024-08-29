@@ -1,0 +1,41 @@
+﻿<header>
+    <ul>
+        <li><img src="~/picture/image.png" alt="logo"></a></li>
+        <li><a href="@Url.Action("Student_Index", "Home")" class="active">首頁</a></li>
+        <!-- 可覆寫的區段 -->
+        <li><a href="@Url.Action("Lmport_data", "Home")">上傳資料檢視</a></li>
+        <h2>@TempData["name"]</h2>
+        <li id="contact"><a href="#">登出</a></li>
+    </ul>
+</header>
+<body>
+    <div class="container text-center">
+        <div class="graduate">
+            <!-- 表單開始 -->
+            <form action="@Url.Action("UploadFile", "Home")" method="post" enctype="multipart/form-data">
+                <div class="col">
+                    <h4>1. 程式能力：通過 CPE 程式能力檢測。</h4>
+                    <label for="CPE" class="form-label"></label>
+                    <input class="form-control" type="file" id="CPE" name="CPE">
+                </div>
+                <hr />
+                <div class="col">
+                    <h4>2. 專業證照：取得國內外專業資訊相關證照乙張。</h4>
+                    <label for="Certificate" class="form-label"></label>
+                    <input class="form-control" type="file" id="Certificate" name="Certificate">
+                </div>
+                <hr />
+                <div class="col">
+                    <h4>3. 競賽或發表證明。</h4>
+                    <input class="form-control" type="file" id="race" name="race" title="上傳競賽證明文件">
+                    <input class="form-control" type="file" id="race_two" name="race_two" title="上傳第二個競賽證明文件">
+                    <input class="form-control" type="file" id="race_three" name="race_three" title="上傳第三個競賽證明文件">
+                </div>
+
+                <!-- 提交按鈕放置於表單結尾之前 -->
+                <input type="submit" class="submit" value="上傳">
+            </form>
+            <!-- 表單結束 -->
+        </div>
+    </div>
+</body>

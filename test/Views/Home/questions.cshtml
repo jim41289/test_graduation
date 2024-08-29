@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6 side-image">
+                <!-- img-->
+                <img src="../21732913453932_814.jpg" alt="">
+                <div class="text">
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <div>
+                    <b>回答問題</b>
+                    <form action="@Url.Action("Doquestions","Home")" method="post">
+
+
+                        <div class="input-field">
+                            <label for="like_food">喜歡的食物</label>
+                            <input type="text" class="input" id="like_food" name="like_food" required autocomplete="off">
+                        </div>
+                        <div class="input-field">
+                            <label for="like_people">喜歡的人物</label>
+                            <input type="text" class="input" id="like_people" name="like_people" required>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="submit" class="submit" value="修改" required autocomplete="off">
+                        </div>
+                    </form>
+                            <div class="signin">
+                                <!-- <div> <a href="forget.html">忘記密碼</a></div> -->
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>

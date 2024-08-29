@@ -1,0 +1,41 @@
+
+<div class="wrapper">
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6 side-image">
+                <!-- img-->
+                <img src="../21732913453932_814.jpg" alt="">
+                <div class="text">
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <div>
+                    <b>­×§ï±K½X</b>
+                    <form action="@Url.Action("Dochange","Home")" method="post">
+                        <input type='hidden' id="account" name="account" value="@TempData["Account"]" />
+                        <div class="input-field">
+                            <label for="newpassword">­×§ï±K½X</label>
+                            <input type="password" class="input" id="newpassword" name="newpassword" required autocomplete="off">
+                        </div>
+                        <div class="input-field">
+                            <label for="checkpassword">½T»{±K½X</label>
+                            <input type="password" class="input" id="checkpassword" name="checkpassword" required>
+                        </div>
+                        <!-- <div class="input-field">
+        <label for="Verification code">ÅçÃÒ½X</label>
+        <input type="text" class="input" id="Verification code" required >
+    </div> -->
+                        <div class="input-field">
+                            <input type="submit" class="submit" value="­×§ï" required autocomplete="off">
+                        </div>
+                    </form>
+                    <div style="color: red; margin-top: 10px;">@TempData["Errmsg"]</div>
+                </div>
+   
+                <div class="signin">
+                    <!-- <div> <a href="forget.html">§Ñ°O±K½X</a></div> -->
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>

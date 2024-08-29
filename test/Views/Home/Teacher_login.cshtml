@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "login";
+}
+
+
+<div class="wrapper">
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6 side-image">
+                <!-- img-->
+                <div class="text">
+                </div>
+            </div>
+            <div class="col-md-6 right">
+                <div>
+                    <form action="@Url.Action("Teacher_DoLogin", "Home")" method="post">
+                        <b>學校系辦登入</b>
+                        <div class="input-field">
+                            <label for="teacher_account">帳號</label>
+                            <input type="text" class="input" id="teacher_account" name="teacher_account" required autocomplete="off">
+                        </div>
+                        <div class="input-field">
+                            <label for="teacher_password">密碼</label>
+                            <input type="password" class="input" id="teacher_password" name="teacher_password" required>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" class="submit" value="登入" required autocomplete="off">
+                            <div style="color: red; margin-top: 10px;">@TempData["Errmsg"]</div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

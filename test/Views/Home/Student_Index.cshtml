@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "student";
+}
+<header>
+    <ul>
+        <li><img src="~/picture/image.png" alt="logo"></a></li>
+        <li><a href="@Url.Action("Student_Index", "Home")" class="active">首頁</a></li>
+        <!-- 可覆寫的區段 -->
+        <li><a href="@Url.Action("Lmport_data", "Home")">上傳資料檢視</a></li>
+        <li id="student_name">@TempData["name"]</li>
+
+        <li id="contact"><a href="@Url.Action("Logout", "Home")">登出</a></li>
+
+    </ul>
+</header>

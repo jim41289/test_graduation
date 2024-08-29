@@ -1,0 +1,60 @@
+body
+{
+    background-color: #ffffff;
+    padding:0;
+    margin: 0;
+    overflow-x:hidden ;
+    text-align: center;
+}
+header
+
+{
+    background-color: #f0f0f0;
+    padding:15px;
+    box-shadow:0 0 3px #000;
+}
+
+header li
+{
+    display: inline;
+    padding-left: 100px;
+}
+
+header li a
+{
+    color:#333;
+    text-decoration:none;
+    padding: 13px;
+}
+
+header li a:hover
+{
+    color:#4e5bc0;
+}
+
+header ul #contact a
+{
+    color: #1a77c3;
+    background-color: bisque;
+    border-radius:30px ;
+    float: right;
+    position: relative;
+    top: -15px;
+}
+header ul #contact a:hover
+{
+    color:rgb(122, 67, 0)
+}
+
+.active
+{
+    font-size: 25px;
+    color:rgb(226, 58, 58) ;
+}
+
+header li img
+{
+    width: 180px;
+    float: left;
+    margin-top:-12px;
+}
